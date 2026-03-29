@@ -1,0 +1,330 @@
+---
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features from '~/components/widgets/Features.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'SaaS Landing Page'
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Login',
+          href: '#'
+        },
+        {
+          variant: 'primary',
+          text: 'Sign Up',
+          href: '#'
+        }
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="SaaS Demo"
+    actions={[
+      { variant: 'primary', text: 'Get Started', href: '/pricing' },
+      { text: 'Learn more', href: '#features' }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'SaaS Hero Image'
+    }}
+  >
+    <Fragment slot="title">
+      Your SaaS Product: <br /> The <span class="text-accent dark:text-white">smarter</span> way to work
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Describe your SaaS product's main value proposition here. Focus on the primary benefit for your target audience.</span
+      >
+      Replace this with a compelling subtitle that explains what your product does and why customers should care.
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Why choose Your Product?"
+    subtitle="Key benefits that set your SaaS product apart from the competition."
+    columns={2}
+    items={[
+      {
+        title: 'Feature One',
+        description: 'Describe a key feature of your SaaS product and how it benefits users.',
+        icon: 'tabler:layers-union'
+      },
+      {
+        title: 'Feature Two',
+        description: 'Describe another important feature and the problem it solves.',
+        icon: 'tabler:artboard'
+      },
+      {
+        title: 'Feature Three',
+        description: "Describe a feature that showcases your product's flexibility or customization options.",
+        icon: 'tabler:writing'
+      },
+      {
+        title: 'Feature Four',
+        description: 'Describe a feature related to performance, speed, or efficiency.',
+        icon: 'tabler:podium'
+      },
+      {
+        title: 'Feature Five',
+        description: 'Describe a feature related to security, reliability, or compliance.',
+        icon: 'tabler:rocket'
+      },
+      {
+        title: 'Feature Six',
+        description: 'Describe a feature that highlights integrations or extensibility.',
+        icon: 'tabler:eyeglass'
+      }
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Use cases"
+    subtitle="See how different types of businesses use Your Product to achieve their goals."
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description: 'Describe how startups can use your product to grow faster and more efficiently.'
+      },
+      {
+        title: 'Benefits:',
+        description:
+          'List the specific benefits for this use case, such as time saved, costs reduced, or results improved.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+      alt: 'Use Case Image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">For Startups</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: 'Describe how established businesses can use your product to streamline operations.'
+      },
+      {
+        title: 'Benefits:',
+        description: 'List the specific benefits for this use case.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+      alt: 'Business Use Case Image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">For Businesses</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: 'Describe how freelancers or individual professionals can benefit from your product.'
+      },
+      {
+        title: 'Benefits:',
+        description: 'List the specific benefits for this use case.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Freelancer Use Case Image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">For Freelancers</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    items={[
+      {
+        title: 'Description:',
+        description: 'Describe how agencies or teams can use your product to collaborate more effectively.'
+      },
+      {
+        title: 'Benefits:',
+        description: 'List the specific benefits for this use case.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Agency Use Case Image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">For Agencies</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Pricing Widget ******************* -->
+
+  <Pricing
+    title="Simple pricing"
+    prices={[
+      {
+        title: 'free',
+        subtitle: 'For individuals getting started',
+        price: '0',
+        period: '/ month',
+        callToAction: {
+          text: 'Get Started Free',
+          href: '#'
+        }
+      },
+      {
+        title: 'pro',
+        subtitle: 'For growing teams',
+        price: 29,
+        period: '/ month',
+        callToAction: {
+          text: 'Upgrade to Pro',
+          href: '#'
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular'
+      },
+      {
+        title: 'enterprise',
+        subtitle: 'For large organizations',
+        price: 99,
+        period: '/ month',
+        callToAction: {
+          text: 'Contact Sales',
+          href: '/contact'
+        }
+      }
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'How do I get started?',
+        description: 'Describe the signup process and what new users need to do.',
+        icon: 'tabler:chevrons-right'
+      },
+      {
+        title: 'Can I use this for commercial projects?',
+        description: 'Describe your licensing terms and what is allowed.',
+        icon: 'tabler:chevrons-right'
+      },
+      {
+        title: 'What technical skills are required?',
+        description: 'Describe the skill level needed to use your product.',
+        icon: 'tabler:chevrons-right'
+      },
+      {
+        title: 'How do I get support?',
+        description: 'Describe your support channels and response times.',
+        icon: 'tabler:chevrons-right'
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Get in touch"
+    subtitle="Have questions? We are here to help."
+    callToAction={{
+      text: 'Contact us',
+      href: '/contact'
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'hello@yourcompany.com',
+        icon: 'tabler:mail'
+      },
+      {
+        title: 'Call us',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset'
+      },
+      {
+        title: 'Follow us',
+        description: '@yourcompany',
+        icon: 'tabler:brand-x'
+      }
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Latest from our blog"
+    information="Stay up to date with tips, tutorials, and product updates."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

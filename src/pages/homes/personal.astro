@@ -1,0 +1,267 @@
+---
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Personal Homepage Demo'
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'About', href: '#about' },
+        { text: 'Resume', href: '#resume' },
+        { text: 'Portfolio', href: '#portfolio' },
+        { text: 'Blog', href: '#blog' }
+      ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: '#'
+        }
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Your Name"
+    tagline="Personal Demo"
+    actions={[{ variant: 'primary', text: 'Contact me', href: getPermalink('/contact#form') }]}
+  >
+    <Fragment slot="subtitle">
+      Replace this with a brief introduction about yourself. Describe your profession, experience, and what you are
+      passionate about.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-dribbble',
+        callToAction: {
+          target: '_blank',
+          text: 'Portfolio',
+          href: '#'
+        }
+      },
+      {
+        icon: 'tabler:brand-behance',
+        callToAction: {
+          target: '_blank',
+          text: 'Behance',
+          href: '#'
+        }
+      },
+      {
+        icon: 'tabler:brand-pinterest',
+        callToAction: {
+          target: '_blank',
+          text: 'Pinterest',
+          href: '#'
+        }
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Profile Image',
+      loading: 'eager'
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p>
+        Replace this with your personal story. Describe your background, what motivates you, and what you bring to your
+        work.
+      </p>
+      <br />
+      <p>Share what inspires you and what you are currently working on or interested in.</p>
+      <br />
+      <p>Connect with me on these platforms:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Work experience"
+    items={[
+      {
+        title:
+          'Your Job Title <br /> <span class="font-normal">Company Name, City</span> <br /> <span class="text-sm font-normal">2022 - Present</span>',
+        description: 'Describe your current role and key responsibilities. Highlight achievements and impact.',
+        icon: 'tabler:briefcase'
+      },
+      {
+        title:
+          'Previous Job Title <br /> <span class="font-normal">Company Name, City</span> <br /> <span class="text-sm font-normal">2019 - 2022</span>',
+        description: 'Describe your previous role and what you accomplished there.',
+        icon: 'tabler:briefcase'
+      }
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Education"
+    items={[
+      {
+        title:
+          'Your Degree <br /> <span class="font-normal">University Name</span> <br /> <span class="text-sm font-normal">2018 - 2022</span>',
+        icon: 'tabler:school'
+      }
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Skills"
+    subtitle="Your key professional skills and competencies."
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Skill One',
+        description: 'Describe your proficiency level and experience.'
+      },
+      {
+        title: 'Skill Two',
+        description: 'Describe your proficiency level and experience.'
+      },
+      {
+        title: 'Skill Three',
+        description: 'Describe your proficiency level and experience.'
+      },
+      {
+        title: 'Skill Four',
+        description: 'Describe your proficiency level and experience.'
+      },
+      {
+        title: 'Skill Five',
+        description: 'Describe your proficiency level and experience.'
+      },
+      {
+        title: 'Skill Six',
+        description: 'Describe your proficiency level and experience.'
+      }
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="portfolio"
+    title="My work"
+    subtitle="Browse my portfolio of recent projects and case studies."
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description: 'Describe the project, its goals, and the outcome.'
+      },
+      {
+        title: 'Role:',
+        description: 'Describe your role and contributions to this project.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
+      alt: 'Project Image'
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'View project',
+      icon: 'tabler:chevron-right',
+      href: '#'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 1: <br /><span class="text-2xl">Project name and brief description</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Client testimonials"
+    subtitle="What clients and colleagues say about working with me."
+    testimonials={[
+      {
+        testimonial: 'Replace this with a real testimonial from a client or colleague.',
+        name: 'Client Name',
+        job: 'Job Title',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Client Image'
+        }
+      },
+      {
+        testimonial: 'Replace this with another testimonial.',
+        name: 'Client Name',
+        job: 'Job Title',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Client Image'
+        }
+      }
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Let's work together"
+    subtitle="Ready to start a project? Get in touch."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact me',
+        href: '/contact'
+      }
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts id="blog" title="Latest from my blog" information="Read my latest articles and insights.">
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

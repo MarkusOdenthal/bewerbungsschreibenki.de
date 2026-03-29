@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: astro-indie-stack-webhook
+    runtime: node
+    rootDir: webhook-server
+    buildCommand: npm ci
+    startCommand: node index.js
+    plan: starter
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: SMTP_HOST
+        value: smtp.strato.de
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: DOWNLOAD_URL
+        sync: false
+      - key: PRODUCT_NAME
+        sync: false

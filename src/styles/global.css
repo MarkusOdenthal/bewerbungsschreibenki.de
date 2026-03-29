@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Custom theme — migrated from tailwind.config.js */
+@theme {
+  /* Colors via CSS variables (set in CustomStyles.astro) */
+  --color-primary: var(--aw-color-primary);
+  --color-secondary: var(--aw-color-secondary);
+  --color-accent: var(--aw-color-accent);
+  --color-default: var(--aw-color-text-default);
+  --color-muted: var(--aw-color-text-muted);
+
+  /* Fonts via CSS variables */
+  --font-sans: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--aw-font-serif, ui-serif), ui-serif, Georgia, serif;
+  --font-heading: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade: fadeInUp 1s both;
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Dark mode variant — Tailwind 4 uses CSS nesting */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom intersect variant */
+@custom-variant intersect (&:not([no-intersect]));

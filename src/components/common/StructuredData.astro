@@ -1,0 +1,22 @@
+---
+import { I18N, METADATA, SITE } from '~/site.config';
+import { generateOrganization, generateWebSite, toJsonLd } from '~/utils/schema';
+
+const websiteSchema = generateWebSite({
+  name: SITE.name,
+  url: SITE.site,
+  description: METADATA.description,
+  inLanguage: I18N.language
+});
+
+const organizationSchema = generateOrganization({
+  name: SITE.name,
+  url: SITE.site
+});
+
+const websiteJsonLd = toJsonLd(websiteSchema);
+const organizationJsonLd = toJsonLd(organizationSchema);
+---
+
+<script type="application/ld+json" is:inline set:html={websiteJsonLd} />
+<script type="application/ld+json" is:inline set:html={organizationJsonLd} />

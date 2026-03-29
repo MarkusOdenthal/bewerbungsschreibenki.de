@@ -1,0 +1,362 @@
+---
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Your Product Name — Describe your key benefit here',
+  ignoreTitleTemplate: true
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      },
+      { text: 'Learn more', href: '#features' }
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'Your Product Hero Image' }}
+  >
+    <Fragment slot="title">
+      Your Product Name: <span class="hidden xl:inline">Describe your key</span>
+      <span class="text-accent dark:text-white"> benefit here</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Your Product Name</span> helps customers achieve their goals faster and easier.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Your Product Name: Key benefit.</span>
+      Replace this text with a compelling description of your product or service and who it is for.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note title="Why choose us:" description="Describe your unique value proposition in one line" />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Features"
+    title="What you get with Your Product Name"
+    subtitle="Describe the overall value of your product or service here. Highlight what makes it stand out."
+    items={[
+      {
+        title: 'Feature One',
+        description:
+          'Describe your first key feature and how it benefits the customer. Focus on outcomes, not just functionality.',
+        icon: 'tabler:brand-tailwind'
+      },
+      {
+        title: 'Feature Two',
+        description:
+          'Describe your second key feature. Explain the problem it solves and why it matters to your target audience.',
+        icon: 'tabler:components'
+      },
+      {
+        title: 'Feature Three',
+        description:
+          'Describe your third key feature. Use clear, benefit-focused language that resonates with your customers.',
+        icon: 'tabler:list-check'
+      },
+      {
+        title: 'Feature Four',
+        description:
+          'Describe your fourth key feature. Quantify the benefit if possible (e.g., "Save 10 hours per week").',
+        icon: 'tabler:rocket'
+      },
+      {
+        title: 'Feature Five',
+        description: 'Describe your fifth key feature. Explain how it differentiates you from competitors.',
+        icon: 'tabler:arrows-right-left'
+      },
+      {
+        title: 'Feature Six',
+        description:
+          'Describe your sixth key feature. Consider including a brief customer quote or statistic for credibility.',
+        icon: 'tabler:bulb'
+      }
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="How it works"
+    title="Your Product Name: How It Works"
+    items={[
+      {
+        title: 'Step one of your process',
+        description: 'Explain the first step of how your product or service works. Keep it simple and clear.'
+      },
+      {
+        title: 'Step two of your process',
+        description: 'Explain the second step. Show how easy it is for customers to get value from your offering.'
+      },
+      {
+        title: 'Step three of your process',
+        description: 'Explain the third step. Emphasize the positive outcome the customer will achieve.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Product showcase image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Built for results</h3>
+      Describe your core value proposition in a brief paragraph
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Easy to customize',
+        description: 'Describe how customers can tailor your product to their specific needs.'
+      },
+      {
+        title: 'Flexible for any use case',
+        description: 'Describe the versatility of your product and the different ways it can be used.'
+      },
+      {
+        title: 'Works on all devices',
+        description: 'Describe cross-platform compatibility or accessibility features.'
+      },
+      {
+        title: 'Integrates with your tools',
+        description: 'Describe integrations or compatibility with other popular tools and services.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Product features image'
+    }}
+  >
+    <Fragment slot="content">Make your product work for you.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Customer satisfaction',
+        description: 'Describe how your product leads to happier customers or users.'
+      },
+      {
+        title: 'Continuous updates',
+        description: 'Describe your commitment to improving the product over time.'
+      },
+      {
+        title: 'Save time and money',
+        description: 'Describe the efficiency gains your customers can expect.'
+      },
+      {
+        title: 'Dedicated support',
+        description: 'Describe the level of customer support you provide.'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Benefits image'
+    }}
+  >
+    <Fragment slot="content">Designed to help you grow and succeed.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Get started with Your Product Name in minutes."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Sign up</span>',
+        description: 'Create your account in seconds. No credit card required to get started.',
+        icon: 'tabler:package'
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Configure</span>',
+        description: 'Set up your preferences and customize the experience to match your needs.',
+        icon: 'tabler:letter-case'
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Launch</span>',
+        description: 'Go live and start seeing results. Our team is here to help if you need anything.',
+        icon: 'tabler:paint'
+      },
+      {
+        title: 'Done!',
+        icon: 'tabler:check'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image'
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Everything you need"
+    subtitle="All the tools and features to build, launch, and grow your project"
+    tagline="Included"
+    items={[
+      {
+        title: 'Analytics Dashboard',
+        description: 'Track your key metrics and make data-driven decisions.',
+        icon: 'flat-color-icons:template'
+      },
+      {
+        title: 'Landing Pages',
+        description: 'Create high-converting landing pages with proven templates.',
+        icon: 'flat-color-icons:gallery'
+      },
+      {
+        title: 'Email Integration',
+        description: 'Connect with your audience through automated email workflows.',
+        icon: 'flat-color-icons:approval'
+      },
+      {
+        title: 'Content Management',
+        description: 'Easily manage and publish content with our built-in CMS tools.',
+        icon: 'flat-color-icons:document'
+      },
+      {
+        title: 'Payment Processing',
+        description: 'Accept payments securely with integrated Stripe checkout.',
+        icon: 'flat-color-icons:currency-exchange'
+      },
+      {
+        title: 'SEO Tools',
+        description: 'Optimize your site for search engines with built-in SEO features.',
+        icon: 'flat-color-icons:advertising'
+      },
+      {
+        title: 'Customer Reviews',
+        description: 'Collect and display customer testimonials to build trust.',
+        icon: 'flat-color-icons:voice-presentation'
+      },
+      {
+        title: 'Contact Forms',
+        description: 'Capture leads with customizable contact forms.',
+        icon: 'flat-color-icons:business-contact'
+      },
+      {
+        title: 'Performance Monitoring',
+        description: 'Monitor your site performance with Grafana Faro integration.',
+        icon: 'flat-color-icons:database'
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Latest from our blog"
+    information="Stay up to date with the latest tips, tutorials, and updates. Replace this with content relevant to your product or service."
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find answers to common questions about Your Product Name and how it can help you."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What is Your Product Name?',
+        description: 'Replace this with a clear, concise answer that explains what your product is and who it is for.'
+      },
+      {
+        title: 'How do I get started?',
+        description: 'Describe the onboarding process. Make it sound simple and approachable.'
+      },
+      {
+        title: 'What are the system requirements?',
+        description: 'List any technical requirements or prerequisites your customers need to know about.'
+      },
+      {
+        title: 'Do you offer a free trial?',
+        description: 'Describe your trial or free tier offering and what is included.'
+      },
+      {
+        title: 'Can I cancel anytime?',
+        description: 'Explain your cancellation policy and any guarantees you offer.'
+      },
+      {
+        title: 'How do I contact support?',
+        description: 'Describe your support channels and typical response times.'
+      }
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Happy Customers', amount: '1,000+' },
+      { title: 'Projects Launched', amount: '500+' },
+      { title: 'Uptime', amount: '99.9%' },
+      { title: 'Support Rating', amount: '4.9/5' }
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      }
+    ]}
+  >
+    <Fragment slot="title"> Ready to get started? </Fragment>
+
+    <Fragment slot="subtitle"> Join thousands of satisfied customers. Start your free trial today. </Fragment>
+  </CallToAction>
+</Layout>

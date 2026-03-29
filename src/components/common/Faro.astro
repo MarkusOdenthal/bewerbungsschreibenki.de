@@ -1,0 +1,20 @@
+---
+// src/components/common/Faro.astro
+import { ANALYTICS } from '~/site.config';
+
+const { collectorUrl, appName } = ANALYTICS.faro;
+---
+
+{collectorUrl && (
+  <script define:vars={{ collectorUrl, appName }}>
+    import('@grafana/faro-web-sdk').then(({ initializeFaro }) => {
+      initializeFaro({
+        url: collectorUrl,
+        app: {
+          name: appName,
+          version: '1.0.0',
+        },
+      });
+    });
+  </script>
+)}

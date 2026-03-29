@@ -1,0 +1,70 @@
+{
+  "name": "astro-indie-stack",
+  "version": "1.0.0",
+  "description": "Production-ready Astro template for indie hackers. Analytics, payments, deploy, security — all included.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "npm run check:astro && npm run check:biome && npm run check:prettier",
+    "check:astro": "astro check",
+    "check:biome": "biome check .",
+    "check:prettier": "prettier --check \"src/**/*.astro\"",
+    "fix": "biome check --write . && prettier -w \"src/**/*.astro\"",
+    "prepare": "husky",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:links": "linkinator ./dist --recurse --skip \"^(?!https?://localhost)\"",
+    "submit-indexnow": "tsx scripts/submit-indexnow.ts"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "@astrolib/seo": "^1.0.0-beta.8",
+    "@fontsource-variable/inter": "^5.2.6",
+    "@grafana/faro-web-sdk": "^2.3.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.1",
+    "astro-embed": "^0.12.0",
+    "astro-icon": "^1.1.5",
+    "limax": "4.1.0",
+    "lodash.merge": "^4.6.2",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.2",
+    "unpic": "^4.1.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,cjs,json}": "biome check --write --no-errors-on-unmatched",
+    "*.astro": "prettier --write"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/mdx": "^5.0.3",
+    "@biomejs/biome": "^2.4.9",
+    "@iconify-json/flat-color-icons": "^1.2.1",
+    "@iconify-json/tabler": "^1.2.20",
+    "@playwright/test": "^1.58.2",
+    "@types/lodash.merge": "^4.6.9",
+    "@types/mdx": "^2.0.13",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "mdast-util-to-string": "^4.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "reading-time": "^1.5.0",
+    "linkinator": "^6.1.4",
+    "sharp": "0.34.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3",
+    "unist-util-visit": "^5.0.0"
+  }
+}

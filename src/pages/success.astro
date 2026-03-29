@@ -1,0 +1,24 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Thank You',
+  robots: { index: false, follow: false }
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 max-w-3xl text-center">
+    <div>
+      <div class="text-6xl mb-6">&#10003;</div>
+      <h1 class="text-4xl font-bold mb-4">Thank you for your purchase!</h1>
+      <p class="text-xl text-muted mb-8">
+        Check your email for the download link. It should arrive within a few minutes.
+      </p>
+      <p class="text-sm text-muted">
+        If you don't see it, check your spam folder. Still nothing?
+        <a href="/contact" class="underline">Contact us</a>.
+      </p>
+    </div>
+  </section>
+</Layout>

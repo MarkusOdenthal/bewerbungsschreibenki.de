@@ -1,0 +1,39 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Layout from '~/layouts/LandingLayout.astro';
+
+const metadata = {
+  title: 'Pre-Launch Landing Page'
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Pre-launch Demo"
+    title="Build Anticipation Before Your Launch"
+    subtitle="This is a demo pre-launch landing page. Replace this with teaser content that builds excitement and collects early signups."
+    actions={[
+      { variant: 'primary', text: 'Join the Waitlist', href: '#', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Learn more', href: '#' }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558803116-c1b4ac867b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+      alt: 'Pre-launch landing page demo'
+    }}
+  />
+
+  <CallToAction
+    title="Ready to customize?"
+    subtitle="Replace this demo content with your own pre-launch messaging and signup forms."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      }
+    ]}
+  />
+</Layout>

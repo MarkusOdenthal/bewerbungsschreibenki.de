@@ -1,0 +1,7 @@
+---
+import { ANALYTICS } from '~/site.config';
+
+const { domain, scriptUrl } = ANALYTICS.plausible;
+---
+
+{domain && <script defer data-domain={domain} src={scriptUrl} />}

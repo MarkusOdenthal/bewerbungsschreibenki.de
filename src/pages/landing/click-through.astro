@@ -1,0 +1,39 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Layout from '~/layouts/LandingLayout.astro';
+
+const metadata = {
+  title: 'Click-through Landing Page Demo'
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Click-through Demo"
+    title="Guide Visitors to Your Main Offer"
+    subtitle="This is a demo click-through landing page. Replace this with content that warms up visitors before directing them to your main conversion page."
+    actions={[
+      { variant: 'primary', text: 'Get Started', href: '/pricing', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Learn more', href: '#' }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Click-through landing page demo'
+    }}
+  />
+
+  <CallToAction
+    title="Ready to customize?"
+    subtitle="Replace this demo content with your own messaging and calls to action."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      }
+    ]}
+  />
+</Layout>

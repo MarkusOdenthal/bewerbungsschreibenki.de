@@ -1,0 +1,6 @@
+dist
+node_modules
+.github
+.changeset
+# Faro.astro uses dynamic import() inside define:vars script, which confuses prettier-plugin-astro parser
+src/components/common/Faro.astro

@@ -1,0 +1,240 @@
+---
+import Brands from '~/components/widgets/Brands.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Startup Landing Page'
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Startup Demo"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      },
+      { text: 'Learn more', href: '#features' }
+    ]}
+  >
+    <Fragment slot="title">
+      Launch your <span class="text-accent dark:text-white">Startup</span> with confidence
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Replace this with your startup's value proposition. Explain what problem you solve and for whom.
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="About us"
+    subtitle="Describe your startup's mission, team, and what makes you different. Share your origin story and vision for the future."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Our traction"
+    subtitle="Key metrics that demonstrate our growth and the trust our users place in us."
+    stats={[
+      { title: 'Users', amount: '10K+' },
+      { title: 'Projects', amount: '500+' },
+      { title: 'Rating', amount: '4.8' },
+      { title: 'Customers', amount: '2K+' }
+    ]}
+  />
+
+  <!-- Brands Widget ****************** -->
+
+  <Brands title="Trusted by" subtitle="Companies and organizations that use our product." icons={[]} images={[]} />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="What we offer"
+    subtitle="Our core services and how they help your business grow."
+    items={[
+      {
+        title: 'Service One',
+        description: 'Describe your first service offering and its value to customers.',
+        icon: 'flat-color-icons:document'
+      },
+      {
+        title: 'Service Two',
+        description: 'Describe your second service offering.',
+        icon: 'flat-color-icons:template'
+      },
+      {
+        title: 'Service Three',
+        description: 'Describe your third service offering.',
+        icon: 'flat-color-icons:voice-presentation'
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Key features"
+    subtitle="The core capabilities that make our product stand out."
+    columns={3}
+    items={[
+      {
+        title: 'Modern Design',
+        description: 'Describe your first key feature.',
+        icon: 'tabler:artboard'
+      },
+      {
+        title: 'Mobile Friendly',
+        description: 'Describe your second key feature.',
+        icon: 'tabler:picture-in-picture'
+      },
+      {
+        title: 'Customizable',
+        description: 'Describe your third key feature.',
+        icon: 'tabler:adjustments-horizontal'
+      },
+      {
+        title: 'Fast Performance',
+        description: 'Describe your fourth key feature.',
+        icon: 'tabler:rocket'
+      },
+      {
+        title: 'SEO Optimized',
+        description: 'Describe your fifth key feature.',
+        icon: 'tabler:arrows-right-left'
+      },
+      {
+        title: 'Integrations',
+        description: 'Describe your sixth key feature.',
+        icon: 'tabler:plug-connected'
+      }
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'What is this product?',
+        description: 'Describe what your product is and who it is designed for.'
+      },
+      {
+        title: 'How much does it cost?',
+        description: 'Describe your pricing model and any free tier or trial period.'
+      },
+      {
+        title: 'Can I try it before buying?',
+        description: 'Describe how potential customers can evaluate your product.'
+      },
+      {
+        title: 'Do I need technical skills?',
+        description: 'Describe the skill level required to use your product.'
+      },
+      {
+        title: 'What support is available?',
+        description: 'Describe your support options and channels.'
+      },
+      {
+        title: 'How do I get started?',
+        description: 'Describe the onboarding process step by step.'
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Contact us"
+    subtitle="We are here to help and answer any questions."
+    columns={4}
+    items={[
+      {
+        title: 'Phone',
+        icon: 'tabler:phone',
+        callToAction: {
+          target: '_blank',
+          text: 'Call us',
+          href: '/',
+          variant: 'link'
+        }
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Write to us',
+          href: '/',
+          variant: 'link'
+        }
+      },
+      {
+        title: 'Chat with sales',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: '/',
+          variant: 'link'
+        }
+      },
+      {
+        title: 'Chat with support',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: '/',
+          variant: 'link'
+        }
+      }
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      }
+    ]}
+  >
+    <Fragment slot="title">Ready to launch?</Fragment>
+
+    <Fragment slot="subtitle"> Join our growing community of successful startups and businesses. </Fragment>
+  </CallToAction>
+</Layout>

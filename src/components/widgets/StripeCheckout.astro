@@ -1,0 +1,14 @@
+---
+import { STRIPE } from '~/site.config';
+
+interface Props {
+  text?: string;
+  class?: string;
+}
+
+const { text = 'Buy Now', class: className = '' } = Astro.props;
+---
+
+<a href={STRIPE.paymentLink} class:list={['btn-primary inline-block', className]}>
+  {text}
+</a>

@@ -1,0 +1,258 @@
+---
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const appStoreImg = '~/assets/images/app-store.png';
+const appStoreDownloadLink = '#';
+
+const googlePlayImg = '~/assets/images/google-play.png';
+const googlePlayDownloadLink = '#';
+
+const metadata = {
+  title: 'Mobile App Homepage'
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      position="left"
+      links={[
+        { text: 'Services', href: '#' },
+        { text: 'Features', href: '#' },
+        { text: 'About', href: '#' }
+      ]}
+      actions={[
+        {
+          text: 'Download',
+          href: '#download'
+        }
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Mobile App Demo"
+    image={{
+      src: 'https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Mobile App Hero Image'
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Your App Name</span>: <br /> Describe your app's
+      <span class="hidden xl:inline">key benefit</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline"> Replace this with a compelling description of what your mobile app does. </span>
+      Download now and start achieving your goals.
+    </Fragment>
+
+    <div slot="actions" class="flex max-w-sm gap-4">
+      <Button variant="link" href={appStoreDownloadLink}>
+        <Image src={appStoreImg} alt="App Store Image" width={200} />
+      </Button>
+
+      <Button variant="link" href={googlePlayDownloadLink}>
+        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
+      </Button>
+    </div>
+  </Hero2>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id="features"
+    title="How to use the app"
+    subtitle="A simple step-by-step guide to get started."
+    tagline="Getting started"
+    columns={2}
+    items={[
+      {
+        title: 'Download the app',
+        description: "Get the app from your device's app store.",
+        icon: 'tabler:square-number-1'
+      },
+      {
+        title: 'Create your account',
+        description: 'Sign up with your email to access all features.',
+        icon: 'tabler:square-number-2'
+      },
+      {
+        title: 'Explore features',
+        description: 'Browse the app and discover what it can do for you.',
+        icon: 'tabler:square-number-3'
+      },
+      {
+        title: 'Start using it',
+        description: 'Begin using the app to achieve your goals.',
+        icon: 'tabler:square-number-4'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521517407911-565264e7d82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+      alt: 'App Features Image'
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Intuitive interface',
+        description: 'Describe the user-friendly design of your app.',
+        icon: 'tabler:wand'
+      },
+      {
+        title: 'Customization',
+        description: 'Describe how users can personalize their experience.',
+        icon: 'tabler:settings'
+      },
+      {
+        title: 'Ready-to-use tools',
+        description: 'Describe the built-in tools and features.',
+        icon: 'tabler:template'
+      },
+      {
+        title: 'Preview mode',
+        description: 'Describe any preview or demo functionality.',
+        icon: 'tabler:carousel-horizontal'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1576153192621-7a3be10b356e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
+      alt: 'Features Image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Offline access',
+        description: 'Describe offline capabilities.',
+        icon: 'tabler:wifi-off'
+      },
+      {
+        title: 'Cloud sync',
+        description: 'Describe cloud storage and sync features.',
+        icon: 'tabler:file-download'
+      },
+      {
+        title: 'Regular updates',
+        description: 'Describe your update schedule and new feature pipeline.',
+        icon: 'tabler:refresh'
+      },
+      {
+        title: 'Favorites',
+        description: 'Describe bookmark or favorites functionality.',
+        icon: 'tabler:heart'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Additional Features Image'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Additional features</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="App statistics"
+    stats={[
+      { amount: '10K+', icon: 'tabler:download' },
+      { amount: '5K+', icon: 'tabler:users' },
+      { amount: '4.8', icon: 'tabler:user-star' }
+    ]}
+  />
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="What our users say"
+    testimonials={[
+      {
+        testimonial: 'Replace this with a real user review of your app.',
+        name: 'User Name',
+        job: 'Job Title',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'User Image'
+        }
+      },
+      {
+        testimonial: 'Replace this with another user testimonial.',
+        name: 'User Name',
+        job: 'Job Title',
+        image: {
+          src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'User Image'
+        }
+      }
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently asked questions"
+    items={[
+      {
+        title: 'What does this app do?',
+        description: 'Describe the core functionality of your app.'
+      },
+      {
+        title: 'Is it available on my device?',
+        description: 'List supported platforms and devices.'
+      },
+      {
+        title: 'How much does it cost?',
+        description: 'Describe your pricing model (free, freemium, paid).'
+      },
+      {
+        title: 'How do I get support?',
+        description: 'Describe your support channels.'
+      }
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction id="download" title="Download the app" subtitle="Start using Your App Name today.">
+    <div slot="actions" class="flex max-w-sm gap-4">
+      <Button variant="link" href={appStoreDownloadLink}>
+        <Image src={appStoreImg} alt="App Store Image" width={200} />
+      </Button>
+
+      <Button variant="link" href={googlePlayDownloadLink}>
+        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
+      </Button>
+    </div>
+  </CallToAction>
+</Layout>

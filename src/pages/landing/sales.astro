@@ -1,0 +1,39 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Layout from '~/layouts/LandingLayout.astro';
+
+const metadata = {
+  title: 'Sales Landing Page Demo'
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Long-form Sales Demo"
+    title="Tell Your Story and Convert Visitors"
+    subtitle="This is a demo long-form sales landing page. Replace this with your product story, benefits, and persuasive copy."
+    actions={[
+      { variant: 'primary', text: 'Get Started', href: '/pricing', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Learn more', href: '#' }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1626&q=80',
+      alt: 'Sales landing page demo'
+    }}
+  />
+
+  <CallToAction
+    title="Ready to customize?"
+    subtitle="Replace this demo content with your own sales copy and calls to action."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/pricing',
+        icon: 'tabler:arrow-right'
+      }
+    ]}
+  />
+</Layout>

@@ -1,0 +1,10 @@
+{
+  "name": "astro-indie-stack-webhook",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "express": "^5",
+    "stripe": "^21",
+    "nodemailer": "^7"
+  }
+}
