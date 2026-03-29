@@ -1,0 +1,8 @@
+{
+  "name": "bewerbungs-engine",
+  "description": "KI-gestütztes Bewerbungspaket: Lebenslauf + Anschreiben aus Stellenanzeigen generieren. Optimiert auf den deutschen Arbeitsmarkt.",
+  "version": "1.0.0",
+  "author": { "name": "kiprogrammieren.de" },
+  "repository": "https://github.com/MarkusOdenthal/bewerbungsschreibenki.de",
+  "license": "MIT"
+}

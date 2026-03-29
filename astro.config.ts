@@ -12,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   output: 'static',
 
-  site: process.env.PUBLIC_SITE_URL || 'https://example.com',
+  site: process.env.PUBLIC_SITE_URL || 'https://bewerbungsschreibenki.de',
   base: '/',
   trailingSlash: 'never',
 

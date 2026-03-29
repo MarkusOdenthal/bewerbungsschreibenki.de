@@ -1,362 +1,171 @@
 ---
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Your Product Name — Describe your key benefit here',
+  title: 'BewerbungsschreibenKI — Professionelle Bewerbung per KI in Minuten',
   ignoreTitleTemplate: true
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
       {
         variant: 'primary',
-        text: 'Get Started',
-        href: '/pricing',
+        text: 'Jetzt kaufen — €39',
+        href: '/preise',
         icon: 'tabler:arrow-right'
       },
-      { text: 'Learn more', href: '#features' }
+      { text: 'So funktioniert es', href: '#how-it-works' }
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'Your Product Hero Image' }}
   >
     <Fragment slot="title">
-      Your Product Name: <span class="hidden xl:inline">Describe your key</span>
-      <span class="text-accent dark:text-white"> benefit here</span>
+      Bewerbungsschreiben per KI: <span class="text-accent dark:text-white">In Minuten statt Stunden</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Your Product Name</span> helps customers achieve their goals faster and easier.</span
+        <span class="font-semibold">BewerbungsschreibenKI</span> generiert aus jeder Stellenanzeige ein maßgeschneidertes
+        Anschreiben und einen optimierten Lebenslauf — direkt in Claude Desktop.</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">Your Product Name: Key benefit.</span>
-      Replace this text with a compelling description of your product or service and who it is for.
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">KI-Bewerbung in Minuten.</span>
+      Stellenanzeige einfügen, Profil einmalig ausfüllen, fertige Bewerbung erhalten. Optimiert für den deutschen Arbeitsmarkt.
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
-  <Note title="Why choose us:" description="Describe your unique value proposition in one line" />
-
-  <!-- Features Widget *************** -->
+  <Note
+    title="Warum BewerbungsschreibenKI:"
+    description="Keine Abo-Falle. €39 einmalig. Läuft auf deinem eigenen Claude-Account — deine Daten bleiben bei dir."
+  />
 
   <Features
     id="features"
     tagline="Features"
-    title="What you get with Your Product Name"
-    subtitle="Describe the overall value of your product or service here. Highlight what makes it stand out."
+    title="Alles für deine perfekte Bewerbung"
+    subtitle="Von der Stellenanzeige zum fertigen Bewerbungspaket — automatisch und auf den deutschen Arbeitsmarkt zugeschnitten."
     items={[
       {
-        title: 'Feature One',
+        title: 'Stellenanzeige → Bewerbung',
         description:
-          'Describe your first key feature and how it benefits the customer. Focus on outcomes, not just functionality.',
-        icon: 'tabler:brand-tailwind'
+          'Füge eine Stellenanzeige ein und erhalte ein maßgeschneidertes Anschreiben, das genau auf die Anforderungen passt.',
+        icon: 'tabler:file-text'
       },
       {
-        title: 'Feature Two',
+        title: 'Optimierter Lebenslauf',
         description:
-          'Describe your second key feature. Explain the problem it solves and why it matters to your target audience.',
-        icon: 'tabler:components'
-      },
-      {
-        title: 'Feature Three',
-        description:
-          'Describe your third key feature. Use clear, benefit-focused language that resonates with your customers.',
+          'Dein Lebenslauf wird automatisch auf die Stelle zugeschnitten — relevante Erfahrungen hervorgehoben, Lücken geschlossen.',
         icon: 'tabler:list-check'
       },
       {
-        title: 'Feature Four',
+        title: 'DIN 5008 konform',
         description:
-          'Describe your fourth key feature. Quantify the benefit if possible (e.g., "Save 10 hours per week").',
-        icon: 'tabler:rocket'
+          'Alle Dokumente entsprechen der deutschen Norm für Geschäftsbriefe — professionell und korrekt formatiert.',
+        icon: 'tabler:certificate'
       },
       {
-        title: 'Feature Five',
-        description: 'Describe your fifth key feature. Explain how it differentiates you from competitors.',
-        icon: 'tabler:arrows-right-left'
+        title: 'Branchenspezifisch',
+        description:
+          'IT, Marketing, Finance, Ausbildung — das Plugin kennt die Anforderungen deiner Branche und passt Ton und Inhalt an.',
+        icon: 'tabler:building'
       },
       {
-        title: 'Feature Six',
+        title: 'Einmalig €39',
+        description: 'Kein Abo, keine versteckten Kosten. Einmal kaufen, unbegrenzt Bewerbungen generieren.',
+        icon: 'tabler:coin'
+      },
+      {
+        title: 'Deine Daten, dein Account',
         description:
-          'Describe your sixth key feature. Consider including a brief customer quote or statistic for credibility.',
-        icon: 'tabler:bulb'
+          'Das Plugin läuft auf deinem eigenen Claude-Account. Keine Daten werden an Dritte übertragen — DSGVO-freundlich.',
+        icon: 'tabler:shield-lock'
       }
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="How it works"
-    title="Your Product Name: How It Works"
-    items={[
-      {
-        title: 'Step one of your process',
-        description: 'Explain the first step of how your product or service works. Keep it simple and clear.'
-      },
-      {
-        title: 'Step two of your process',
-        description: 'Explain the second step. Show how easy it is for customers to get value from your offering.'
-      },
-      {
-        title: 'Step three of your process',
-        description: 'Explain the third step. Emphasize the positive outcome the customer will achieve.'
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Product showcase image'
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Built for results</h3>
-      Describe your core value proposition in a brief paragraph
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Easy to customize',
-        description: 'Describe how customers can tailor your product to their specific needs.'
-      },
-      {
-        title: 'Flexible for any use case',
-        description: 'Describe the versatility of your product and the different ways it can be used.'
-      },
-      {
-        title: 'Works on all devices',
-        description: 'Describe cross-platform compatibility or accessibility features.'
-      },
-      {
-        title: 'Integrates with your tools',
-        description: 'Describe integrations or compatibility with other popular tools and services.'
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Product features image'
-    }}
-  >
-    <Fragment slot="content">Make your product work for you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Customer satisfaction',
-        description: 'Describe how your product leads to happier customers or users.'
-      },
-      {
-        title: 'Continuous updates',
-        description: 'Describe your commitment to improving the product over time.'
-      },
-      {
-        title: 'Save time and money',
-        description: 'Describe the efficiency gains your customers can expect.'
-      },
-      {
-        title: 'Dedicated support',
-        description: 'Describe the level of customer support you provide.'
-      }
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Benefits image'
-    }}
-  >
-    <Fragment slot="content">Designed to help you grow and succeed.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
   <Steps
-    title="Get started with Your Product Name in minutes."
+    id="how-it-works"
+    title="In 3 Schritten zur fertigen Bewerbung"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Sign up</span>',
-        description: 'Create your account in seconds. No credit card required to get started.',
-        icon: 'tabler:package'
+        title: 'Schritt 1: <span class="font-medium">Plugin installieren</span>',
+        description: 'Lade das Plugin herunter und installiere es in Claude Desktop. Dauert unter 2 Minuten.',
+        icon: 'tabler:download'
       },
       {
-        title: 'Step 2: <span class="font-medium">Configure</span>',
-        description: 'Set up your preferences and customize the experience to match your needs.',
-        icon: 'tabler:letter-case'
+        title: 'Schritt 2: <span class="font-medium">Profil ausfüllen</span>',
+        description:
+          'Fülle einmalig dein Profil aus — Berufserfahrung, Ausbildung, Skills. Das Plugin führt dich durch den Prozess.',
+        icon: 'tabler:user-edit'
       },
       {
-        title: 'Step 3: <span class="font-medium">Launch</span>',
-        description: 'Go live and start seeing results. Our team is here to help if you need anything.',
-        icon: 'tabler:paint'
+        title: 'Schritt 3: <span class="font-medium">Stellenanzeige einfügen</span>',
+        description: 'Kopiere eine Stellenanzeige, das Plugin generiert Anschreiben + Lebenslauf. Fertig.',
+        icon: 'tabler:sparkles'
       },
       {
-        title: 'Done!',
+        title: 'Bewerbung abschicken!',
         icon: 'tabler:check'
       }
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image'
-    }}
   />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Everything you need"
-    subtitle="All the tools and features to build, launch, and grow your project"
-    tagline="Included"
-    items={[
-      {
-        title: 'Analytics Dashboard',
-        description: 'Track your key metrics and make data-driven decisions.',
-        icon: 'flat-color-icons:template'
-      },
-      {
-        title: 'Landing Pages',
-        description: 'Create high-converting landing pages with proven templates.',
-        icon: 'flat-color-icons:gallery'
-      },
-      {
-        title: 'Email Integration',
-        description: 'Connect with your audience through automated email workflows.',
-        icon: 'flat-color-icons:approval'
-      },
-      {
-        title: 'Content Management',
-        description: 'Easily manage and publish content with our built-in CMS tools.',
-        icon: 'flat-color-icons:document'
-      },
-      {
-        title: 'Payment Processing',
-        description: 'Accept payments securely with integrated Stripe checkout.',
-        icon: 'flat-color-icons:currency-exchange'
-      },
-      {
-        title: 'SEO Tools',
-        description: 'Optimize your site for search engines with built-in SEO features.',
-        icon: 'flat-color-icons:advertising'
-      },
-      {
-        title: 'Customer Reviews',
-        description: 'Collect and display customer testimonials to build trust.',
-        icon: 'flat-color-icons:voice-presentation'
-      },
-      {
-        title: 'Contact Forms',
-        description: 'Capture leads with customizable contact forms.',
-        icon: 'flat-color-icons:business-contact'
-      },
-      {
-        title: 'Performance Monitoring',
-        description: 'Monitor your site performance with Grafana Faro integration.',
-        icon: 'flat-color-icons:database'
-      }
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Latest from our blog"
-    information="Stay up to date with the latest tips, tutorials, and updates. Replace this with content relevant to your product or service."
-  />
-
-  <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Find answers to common questions about Your Product Name and how it can help you."
-    tagline="FAQs"
+    title="Häufig gestellte Fragen"
+    subtitle="Alles was du über BewerbungsschreibenKI wissen musst."
+    tagline="FAQ"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'What is Your Product Name?',
-        description: 'Replace this with a clear, concise answer that explains what your product is and who it is for.'
+        title: 'Was ist BewerbungsschreibenKI?',
+        description:
+          'Ein Claude Plugin, das aus Stellenanzeigen professionelle Bewerbungsschreiben und Lebensläufe generiert. Optimiert für den deutschen Arbeitsmarkt mit DIN 5008 Formatierung.'
       },
       {
-        title: 'How do I get started?',
-        description: 'Describe the onboarding process. Make it sound simple and approachable.'
+        title: 'Brauche ich ein Claude-Abo?',
+        description:
+          'Ja, du brauchst einen Claude Desktop Account (Pro oder Free). Das Plugin läuft auf deinem eigenen Account — deine Daten bleiben bei dir.'
       },
       {
-        title: 'What are the system requirements?',
-        description: 'List any technical requirements or prerequisites your customers need to know about.'
+        title: 'Wie unterscheidet sich das von ChatGPT?',
+        description:
+          'BewerbungsschreibenKI ist speziell für den deutschen Bewerbungsmarkt entwickelt. Es kennt DIN 5008, branchenspezifische Anforderungen und erstellt strukturierte Dokumente statt nur Fließtext.'
       },
       {
-        title: 'Do you offer a free trial?',
-        description: 'Describe your trial or free tier offering and what is included.'
+        title: 'Ist das ein Abo?',
+        description: 'Nein. €39 einmalig, unbegrenzte Nutzung. Keine monatlichen Kosten, kein Kleingedrucktes.'
       },
       {
-        title: 'Can I cancel anytime?',
-        description: 'Explain your cancellation policy and any guarantees you offer.'
+        title: 'Kann ich das Plugin auch für englische Bewerbungen nutzen?',
+        description:
+          'Der Fokus liegt auf dem deutschen Markt, aber du kannst das Plugin auch für englischsprachige Bewerbungen einsetzen.'
       },
       {
-        title: 'How do I contact support?',
-        description: 'Describe your support channels and typical response times.'
+        title: 'Wie bekomme ich Support?',
+        description: 'Per E-Mail an support@bewerbungsschreibenki.de. Antwortzeit in der Regel unter 24 Stunden.'
       }
     ]}
   />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Happy Customers', amount: '1,000+' },
-      { title: 'Projects Launched', amount: '500+' },
-      { title: 'Uptime', amount: '99.9%' },
-      { title: 'Support Rating', amount: '4.9/5' }
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Get Started',
-        href: '/pricing',
+        text: 'Jetzt kaufen — €39',
+        href: '/preise',
         icon: 'tabler:arrow-right'
       }
     ]}
   >
-    <Fragment slot="title"> Ready to get started? </Fragment>
+    <Fragment slot="title">Bereit für deine nächste Bewerbung?</Fragment>
 
-    <Fragment slot="subtitle"> Join thousands of satisfied customers. Start your free trial today. </Fragment>
+    <Fragment slot="subtitle">
+      Schluss mit stundenlangem Formulieren. Stellenanzeige rein, Bewerbung raus. Einmalig €39.
+    </Fragment>
   </CallToAction>
 </Layout>

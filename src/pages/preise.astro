@@ -1,0 +1,82 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Preise — BewerbungsschreibenKI'
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Preise"
+    title="Einmal kaufen, unbegrenzt bewerben"
+    subtitle="Kein Abo. Keine versteckten Kosten."
+  />
+
+  <Prices
+    title="Ein Produkt. Ein Preis."
+    subtitle="Alles was du für professionelle KI-Bewerbungen brauchst"
+    prices={[
+      {
+        title: 'Bewerbungs-Engine',
+        subtitle: 'Claude Plugin — Einmalkauf',
+        price: '39',
+        period: 'einmalig',
+        items: [
+          { description: 'Unbegrenzte Bewerbungen generieren' },
+          { description: 'Anschreiben + Lebenslauf aus Stellenanzeigen' },
+          { description: 'DIN 5008 konforme Formatierung' },
+          { description: 'Branchenspezifische Anpassung' },
+          { description: 'Kostenlose Updates' },
+          { description: 'Läuft auf deinem eigenen Claude-Account' }
+        ],
+        callToAction: {
+          text: 'Jetzt kaufen',
+          href: '#'
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Empfohlen'
+      }
+    ]}
+  />
+
+  <FAQs
+    title="Fragen zum Kauf"
+    tagline="FAQ"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Wie erhalte ich das Plugin nach dem Kauf?',
+        description:
+          'Nach der Zahlung erhältst du sofort einen Download-Link per E-Mail. Die Installation in Claude Desktop dauert unter 2 Minuten.'
+      },
+      {
+        title: 'Gibt es eine Geld-zurück-Garantie?',
+        description:
+          '14 Tage Geld-zurück-Garantie, keine Fragen. Wenn du nicht zufrieden bist, schreib uns eine E-Mail.'
+      },
+      {
+        title: 'Funktioniert das Plugin auch mit Claude Free?',
+        description: 'Ja, das Plugin funktioniert mit allen Claude Desktop Versionen — Free und Pro.'
+      }
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Jetzt kaufen — €39',
+        href: '#',
+        icon: 'tabler:arrow-right'
+      }
+    ]}
+  >
+    <Fragment slot="title">Starte jetzt mit deiner KI-Bewerbung</Fragment>
+    <Fragment slot="subtitle">Einmalig €39. Unbegrenzte Bewerbungen. 14 Tage Geld-zurück-Garantie.</Fragment>
+  </CallToAction>
+</Layout>

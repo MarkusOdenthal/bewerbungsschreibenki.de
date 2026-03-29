@@ -1,0 +1,17 @@
+# Bewerbungs-Einstellungen
+# Passe diese Werte an deinen bevorzugten Bewerbungsstil an.
+
+# Anrede-Stil: formal | modern
+stil: formal
+
+# Standardbranche (wird genutzt wenn in der Stellenanzeige unklar)
+branche: allgemein
+
+# Bevorzugte Anrede: sie | du
+anrede: sie
+
+# Gehaltsvorstellung anzeigen: true | false
+gehalt_anzeigen: false
+
+# Frühester Eintrittstermin (z.B. "sofort", "01.05.2026")
+eintrittstermin: ""

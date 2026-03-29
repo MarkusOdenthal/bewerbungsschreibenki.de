@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: astro-indie-stack
+    name: bewerbungsschreibenki-de
     runtime: static
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist

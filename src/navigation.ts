@@ -3,52 +3,42 @@ import { getBlogPermalink, getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     { text: 'Features', href: '#features' },
-    { text: 'Pricing', href: getPermalink('/pricing') },
-    { text: 'Blog', href: getBlogPermalink() },
-    {
-      text: 'Pages',
-      links: [
-        { text: 'About', href: getPermalink('/about') },
-        { text: 'Contact', href: getPermalink('/contact') },
-        { text: 'Terms', href: getPermalink('/terms') },
-        { text: 'Privacy', href: getPermalink('/privacy') }
-      ]
-    }
+    { text: 'So funktioniert es', href: '#how-it-works' },
+    { text: 'Preise', href: getPermalink('/preise') },
+    { text: 'Blog', href: getBlogPermalink() }
   ],
-  actions: [{ text: 'Get Started', href: getPermalink('/pricing') }]
+  actions: [{ text: 'Jetzt kaufen — €39', href: getPermalink('/preise') }]
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Produkt',
       links: [
         { text: 'Features', href: '#features' },
-        { text: 'Pricing', href: getPermalink('/pricing') },
+        { text: 'Preise', href: getPermalink('/preise') },
         { text: 'Blog', href: getBlogPermalink() }
       ]
     },
     {
-      title: 'Company',
+      title: 'Ressourcen',
       links: [
-        { text: 'About', href: getPermalink('/about') },
-        { text: 'Contact', href: getPermalink('/contact') }
+        { text: 'Bewerbungsschreiben', href: getPermalink('/bewerbungsschreiben') },
+        { text: 'Lebenslauf erstellen', href: getPermalink('/lebenslauf-erstellen') },
+        { text: 'KI-Bewerbung', href: getPermalink('/ki-bewerbung') }
       ]
     },
     {
-      title: 'Legal',
+      title: 'Rechtliches',
       links: [
-        { text: 'Terms', href: getPermalink('/terms') },
-        { text: 'Privacy', href: getPermalink('/privacy') }
+        { text: 'Impressum', href: getPermalink('/impressum') },
+        { text: 'Datenschutz', href: getPermalink('/datenschutz') }
       ]
     }
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy', href: getPermalink('/privacy') }
+    { text: 'Impressum', href: getPermalink('/impressum') },
+    { text: 'Datenschutz', href: getPermalink('/datenschutz') }
   ],
-  socialLinks: [
-    { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: '#' },
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' }
-  ]
+  socialLinks: [{ ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/MarkusOdenthal' }]
 };

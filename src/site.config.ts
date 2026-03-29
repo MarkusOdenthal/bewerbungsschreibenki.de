@@ -2,23 +2,24 @@
 // Central configuration — change everything in one place.
 
 export const SITE = {
-  name: 'Astro Indie Stack',
-  site: import.meta.env.PUBLIC_SITE_URL || 'https://example.com',
+  name: 'BewerbungsschreibenKI',
+  site: import.meta.env.PUBLIC_SITE_URL || 'https://bewerbungsschreibenki.de',
   base: '/',
   trailingSlash: false as boolean
 };
 
 export const I18N = {
-  language: 'en',
+  language: 'de',
   textDirection: 'ltr' as 'ltr' | 'rtl'
 };
 
 export const METADATA = {
   title: {
-    default: SITE.name,
+    default: 'BewerbungsschreibenKI — KI-Bewerbung & Lebenslauf Generator',
     template: `%s — ${SITE.name}`
   },
-  description: 'Production-ready Astro template for indie hackers. Clone, configure, launch.',
+  description:
+    'Professionelle Bewerbungsschreiben und Lebensläufe per KI generieren. Stellenanzeige einfügen, optimiertes Anschreiben und Lebenslauf erhalten. Claude Plugin für €39.',
   robots: {
     index: true,
     follow: true
